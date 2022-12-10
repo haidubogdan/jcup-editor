@@ -1,0 +1,21 @@
+/* Minijava Grammar */
+package org.netbeans.modules.test;
+
+parser code {:
+    protected int error_sync_size() {
+        return 1;
+    }
+:}
+
+terminal String T_BLADE_EACH;
+
+/* Non terminals */
+non terminal end_section;
+
+thestart ::=
+top_statement_list:statementList
+{:
+    Program program = new Program();
+    RESULT = program;
+:}
+;
